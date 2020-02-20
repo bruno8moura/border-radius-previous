@@ -1,8 +1,8 @@
 .box {
-    width: 90%;
-    height: 20em;
+    width: 70%;
+    height: 70%;
     position: relative;
-    margin-left: 11px;
+    margin: 0 auto;
 }
 
 .imagebackground {
@@ -13,7 +13,7 @@
 }
 
 .topLeftRegulator {
-    top: -15%;
+    top: -45px;
     position: absolute;
     width: 30%;
     left: 0;
@@ -21,34 +21,24 @@
 
 .topRightRegulator {
     right: 0%;
-    top: -15%;
+    top: -45px;
     position: absolute;
     width: 30%;
     transform:rotate(180deg);
 }
 
 .bottomLeftRegulator {
-    bottom: -15%;
+    bottom: -45px;
     position: absolute;
     width: 30%;
     transform:rotate(180deg);
     right: 0%;
+    display: inline-block;
 }
 
 .bottomRightRegulator {
     left: 0%;
     position: absolute;
     width: 30%;
-    bottom: -15%;
-}
-
-.imagebackground {
-    visibility: visible;
-}
-
-@media only screen and (max-width: 450px) {
-    .box {
-        width: 90%;
-        height: 13em;
-    }   
+    bottom: -45px;
 }
