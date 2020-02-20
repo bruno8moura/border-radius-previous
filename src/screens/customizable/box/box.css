@@ -12,14 +12,14 @@
     position: relative;
 }
 
-.topLeftRegulator {
+.borderTopLeftRadius {
     top: -45px;
     position: absolute;
     width: 30%;
     left: 0;
 }
 
-.topRightRegulator {
+.borderTopRightRadius {
     right: 0%;
     top: -45px;
     position: absolute;
@@ -27,7 +27,7 @@
     transform:rotate(180deg);
 }
 
-.bottomLeftRegulator {
+.borderBottomRightRadius {
     bottom: -45px;
     position: absolute;
     width: 30%;
@@ -36,7 +36,7 @@
     display: inline-block;
 }
 
-.bottomRightRegulator {
+.borderBottomLeftRadius {
     left: 0%;
     position: absolute;
     width: 30%;
