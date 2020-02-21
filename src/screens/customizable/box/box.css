@@ -1,8 +1,15 @@
 .box {
-    width: 70%;
+    width: 90%;
     height: 70%;
     position: relative;
     margin: 0 auto;
+}
+
+@media only screen and (min-width: 870px){
+    .box {
+        width: 60%;
+        height: 70%;
+    }
 }
 
 .imagebackground {
