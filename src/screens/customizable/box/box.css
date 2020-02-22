@@ -5,10 +5,10 @@
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 870px){
+@media only screen and (min-width: 1024px){
     .box {
         width: 60%;
-        height: 70%;
+        height: 60%;
     }
 }
 
@@ -17,6 +17,8 @@
     height: 100%;
     background-repeat: no-repeat;
     position: relative;
+    text-align: center;
+    text-decoration-color: white;
 }
 
 .borderTopLeftRadius {
@@ -48,4 +50,21 @@
     position: absolute;
     width: 30%;
     bottom: -45px;
+}
+
+.button-copy {
+    width: 100%;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+}
+
+.div-txtImg {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    font-size: 3vw;
+    font-weight: bold;
 }

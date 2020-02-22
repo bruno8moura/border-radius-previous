@@ -1,7 +1,9 @@
 import React from 'react';
 import './box.css';
 import supermarioimg from './img/Super_Mario_World.jpg'
-import BorderRadius from '../../../utils/BorderRadius';
+import BorderRadiusImage from '../../../utils/BorderRadiusImage';
+import BorderRadiusValues from '../../../utils/BorderRadiusValues';
+import Utils from '../../../utils/Utils';
 
 const borderRadiousRegulator = ({className, id, onChange}) => {
     let properties = {
@@ -26,22 +28,47 @@ const img = ({src, className}) => {
     return( React.createElement("img", properties, null) );
 }
 
-const customizableBox = (props) => {
-    const onChange = (event) => {
-        let borderRadiusConfig = new BorderRadius("imagebackground", event.target);
-        borderRadiusConfig.changeBorderRadius();
+const divRadiousInfo = ({id, className, content}) => {
+    let properties = {
+        className,
+        id
     };
 
-    
-    let elements = [
-                    borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(),  className: "borderTopLeftRadius", id:"borderTopLeftRadius", onChange }),
-                    borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderTopRightRadius", id:"borderTopRightRadius", onChange}),
-                    borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderBottomLeftRadius", id:"borderBottomLeftRadius", onChange}),
-                    borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderBottomRightRadius", id:"borderBottomRightRadius", onChange}),
-                    img({src: supermarioimg, className: "imagebackground"})
+    return ( React.createElement("div", properties, content) );
+}
+
+const buttonCopy = ({className, innerHTML, type, onClick}) => {
+    let properties = {
+        className, 
+        type,
+        onClick
+    };
+    return ( React.createElement("button", properties, innerHTML) );
+}
+
+const customizableBox = (props) => {
+    let borderRadiusValues = new BorderRadiusValues('borderradiusinfo');
+    const onChange = (event) => {
+        let borderRadiusConfig = new BorderRadiusImage("imagebackground", event.target);
+        borderRadiusConfig.changeBorderRadius();
+        
+        borderRadiusValues[event.target.id] = borderRadiusConfig.borderRadiusValue;
+        borderRadiusValues.update();
+    };
+
+    let boxElements = [
+                      borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderTopLeftRadius", id:"borderTopLeftRadius", onChange })
+                    , borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderTopRightRadius", id:"borderTopRightRadius", onChange })
+                    , borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderBottomLeftRadius", id:"borderBottomLeftRadius", onChange })
+                    , borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderBottomRightRadius", id:"borderBottomRightRadius", onChange })
+                    , img({src: supermarioimg, className: "imagebackground"})
+                    , buttonCopy({className: "button-copy", innerHTML: "Copy Border Radius", type: "button", onClick: () => Utils.copyTextFromANodeHTML('borderradiusinfo')})
+                    , divRadiousInfo({ id: "borderradiusinfo", className: "div-txtImg show-and-hiding", content:  borderRadiusValues.toString})
                 ];
-                
-    return( React.createElement("div", {key: (() => Math.round(Math.random() * 10000))(), className: "box"}, elements) );
+              
+    let divBox = React.createElement("div", {key: (() => Math.round(Math.random() * 10000))(), className: "box"}, boxElements);
+
+    return( divBox );
 }
 
 export default customizableBox;
