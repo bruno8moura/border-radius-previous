@@ -2,15 +2,8 @@ A React App for preview how CSS3 border-radius values affect an element.
 
  # Border Radius Previous
 
-![Application](./project_images/Screenshot1.png)
-![Application](./project_images/Screenshot2.png)
-![Application](./project_images/Screenshot3.png)
-![Application](./project_images/Screenshot4.png)
-![Application](./project_images/Screenshot5.png)
-![Application](./project_images/Screenshot6.png)
-![Application](./project_images/Screenshot7.png)
-![Application](./project_images/Screenshot8.png)
-![Application](./project_images/Screenshot9.png)
+![Application](./project_images/app.gif)
+
 
 ## Why
 
