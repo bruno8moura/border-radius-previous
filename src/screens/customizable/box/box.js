@@ -4,6 +4,7 @@ import supermarioimg from './img/Super_Mario_World.jpg'
 import BorderRadiusImage from '../../../utils/BorderRadiusImage';
 import BorderRadiusValues from '../../../utils/BorderRadiusValues';
 import Utils from '../../../utils/Utils';
+import Popup from '../../../utils/Popup';
 
 const borderRadiousRegulator = ({className, id, onChange}) => {
     let properties = {
@@ -56,14 +57,19 @@ const customizableBox = (props) => {
         borderRadiusValues.update();
     };
 
+    const onClick = (event) => {
+        Utils.copyTextFromANodeHTML('borderradiusinfo');
+        Popup.exibirMensagem(`>> ${borderRadiusValues.toString} <<`);
+    };
+
     let boxElements = [
                       borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderTopLeftRadius", id:"borderTopLeftRadius", onChange })
                     , borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderTopRightRadius", id:"borderTopRightRadius", onChange })
                     , borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderBottomLeftRadius", id:"borderBottomLeftRadius", onChange })
                     , borderRadiousRegulator({key: (() => Math.round(Math.random() * 10000))(), className: "borderBottomRightRadius", id:"borderBottomRightRadius", onChange })
                     , img({src: supermarioimg, className: "imagebackground"})
-                    , buttonCopy({className: "button-copy", innerHTML: "Copy Border Radius", type: "button", onClick: () => Utils.copyTextFromANodeHTML('borderradiusinfo')})
-                    , divRadiousInfo({ id: "borderradiusinfo", className: "div-txtImg show-and-hiding", content:  borderRadiusValues.toString})
+                    , buttonCopy({className: "button-copy", innerHTML: "Copy Border Radius", type: "button", onClick: onClick})
+                    , divRadiousInfo({ id: "borderradiusinfo", className: "div-txtImg", content:  borderRadiusValues.toString})
                 ];
               
     let divBox = React.createElement("div", {key: (() => Math.round(Math.random() * 10000))(), className: "box"}, boxElements);

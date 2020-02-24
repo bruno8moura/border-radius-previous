@@ -68,3 +68,15 @@
     font-size: 3vw;
     font-weight: bold;
 }
+
+#toast-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: indigo;
+    color: white;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;  
+}
