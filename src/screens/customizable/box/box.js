@@ -59,7 +59,7 @@ const customizableBox = (props) => {
 
     const onClick = (event) => {
         Utils.copyTextFromANodeHTML('borderradiusinfo');
-        Popup.exibirMensagem(`>> ${borderRadiusValues.toString} <<`);
+        Popup.exibirMensagem(`Copied >> ${borderRadiusValues.toString} <<`);
     };
 
     let boxElements = [
