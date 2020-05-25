@@ -19,6 +19,8 @@ My [LinkedIn](https://www.linkedin.com/in/brunomoura1/)
 
 My email bruno8moura@gmail.com
 
+My [Medium.com](https://medium.com/@bruno8moura) space
+
 ## Getting started
 
 ### Prerequisites
